@@ -33,3 +33,22 @@ This demo showcases four partial schemas running as federated microservices. Eac
 To see the query plan when running queries against the gateway, click on the `Query Plan` tab in the bottom right hand corner of [GraphQL Playground](http://localhost:4000)
 
 To learn more about Apollo Federation, check out the [docs](https://www.apollographql.com/docs/apollo-server/federation/introduction)
+
+
+
+==========
+
+
+https://medium.com/webill/run-a-federated-graphql-server-with-minikube-1d0f913ee8a8
+
+docker build -f ./dockerfiles/accounts.dockerfile -t accounts . && docker tag accounts:latest <your_username>/accounts:latest && docker push <your_username>/accounts:latest
+
+docker build -f ./dockerfiles/accounts.dockerfile -t accounts . && docker tag accounts:latest idiallo/accounts:latest && docker push idiallo/accounts:latest
+
+docker build -f ./dockerfiles/gateway.dockerfile -t gateway . && docker tag gateway:latest idiallo/gateway:latest && docker push idiallo/gateway:latest
+
+docker build -f ./dockerfiles/inventory.dockerfile -t inventory . && docker tag inventory:latest idiallo/inventory:latest && docker push idiallo/inventory:latest
+
+docker build -f ./dockerfiles/products.dockerfile -t products . && docker tag products:latest idiallo/products:latest && docker push idiallo/products:latest
+
+docker build -f ./dockerfiles/reviews.dockerfile -t reviews . && docker tag reviews:latest idiallo/reviews:latest && docker push idiallo/reviews:latest
